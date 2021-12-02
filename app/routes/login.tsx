@@ -129,7 +129,7 @@ export default function LoginRoute() {
             }
           />
           <fieldset>
-            <label htmlFor="loginType">
+            <label>
               <input
                 type="radio"
                 name="loginType"
@@ -142,7 +142,7 @@ export default function LoginRoute() {
               {' '}
               Login
             </label>
-            <label htmlFor="loginType">
+            <label>
               <input
                 type="radio"
                 name="loginType"
