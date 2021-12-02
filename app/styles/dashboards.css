@@ -1,0 +1,21 @@
+.dashboards-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: inherit;
+}
+
+.dashboards-layout .container {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  width: 100%;
+}
+
+.dashboards-layout .container > * {
+  width: 100%;
+}
+
+.dashboards-layout .spinner {
+  margin: auto;
+  padding: 1rem;
+}
