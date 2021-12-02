@@ -2,7 +2,7 @@ import type { LinksFunction, LoaderFunction } from 'remix';
 import type { Dashboard, User } from '@prisma/client';
 import { Outlet, useLoaderData } from 'remix';
 import { Dashboard as DashboardIcon, Create } from '@mui/icons-material';
-import { getUser, requireUserId } from '~/utils/session.server';
+import { getUser } from '~/utils/session.server';
 import Navigation from '~/components/Navigation';
 import stylesUrl from '../styles/dashboards.css';
 import { getUserDashboards } from '~/utils/dashboards.server';
@@ -20,7 +20,6 @@ type LoaderData = {
 };
 
 export const loader: LoaderFunction = async ({ request }) => {
-  await requireUserId(request);
   const user = await getUser(request);
   const dashboards = user ? (await getUserDashboards(user.id)) : [];
   const data: LoaderData = { dashboards, user };

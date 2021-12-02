@@ -7,7 +7,7 @@ import {
   useCatch,
   Meta,
 } from 'remix';
-import { createTheme, ThemeProvider } from '@mui/material';
+import { createTheme, responsiveFontSizes, ThemeProvider } from '@mui/material';
 
 import globalStylesUrl from './styles/global.css';
 
@@ -25,6 +25,7 @@ export const links: LinksFunction = () => [
 export const meta: MetaFunction = () => {
   const description = 'A crypto dashboard with SEO optimization!';
   return {
+    viewport: 'width=device-width,initial-scale=1',
     description,
     keywords: 'Cypto,Dashboard',
   };
@@ -73,11 +74,11 @@ export function CatchBoundary() {
   );
 }
 
-const darkTheme = createTheme({
+const darkTheme = responsiveFontSizes(createTheme({
   palette: {
     mode: 'dark',
   },
-});
+}));
 
 export default function App() {
   return (
